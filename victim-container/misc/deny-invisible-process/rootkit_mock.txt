@@ -1,0 +1,16 @@
+Unhide 20130526
+Copyright © 2013 Yago Jesus & Patrick Gouin
+License GPLv3+ : GNU GPL version 3 or later
+http://www.unhide-forensics.info
+
+NOTE : This version of unhide is for systems using Linux >= 2.6
+
+Used options:
+[*]Searching for Hidden processes through  comparison of results of system calls, proc, dir and ps
+
+Found HIDDEN PID: 34771
+        Cmdline: "bash"
+        Executable: "/usr/bin/bash"
+        Command: "bash"
+        $USER=<undefined>
+        $PWD=<undefined>

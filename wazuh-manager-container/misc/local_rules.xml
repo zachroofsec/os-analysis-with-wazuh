@@ -1,0 +1,16 @@
+<group name="local,">
+<!--  Custom Rules ID: 100000 - 120000 -->
+  <rule id="100000" level="11" ignore="1" noalert="">
+    <if_group>syscheck</if_group>
+    <match>/etc/ld.so.preload</match>
+    <description>POTENTIAL MALWARE (or INVISIBLE PROCESS) - Changes to /etc/ld.so.preload </description>
+    <group>invisible_process</group>
+  </rule>
+
+    <rule id="100100" level="11" frequency="2" timeframe="300" ignore="300" noalert="">
+        <if_matched_group>invisible_process</if_matched_group>
+        <description>ESCALATION - MULTIPLE signs of malware (or invisible processes)</description>
+        <group>escalation</group>
+    </rule>
+</group>
+
