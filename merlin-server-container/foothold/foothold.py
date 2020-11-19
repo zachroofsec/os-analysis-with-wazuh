@@ -61,9 +61,10 @@ class MerlinFoothold:
         MerlinFoothold.log_stdout_stderr(calling_process_name=calling_process_name, process=process, log_level="info")
 
     def run_ps(self):
+        logger.info("Running `ps`")
         calling_process_name = "ps"
         process = subprocess.run([calling_process_name,
-                                  "-aux"],
+                                  "-eo"],
                                  capture_output=True,
                                  text=True,
                                  check=True)

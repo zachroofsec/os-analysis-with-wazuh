@@ -17,6 +17,7 @@ RUN wget https://github.com/Ne0nd0g/merlin/releases/download/${MERLIN_BASE_VERSI
 
 COPY init_scripts/entrypoint.sh /entrypoint.sh
 COPY init_scripts/merlin.sh /merlin.sh
+COPY foothold /foothold
 
 RUN chmod +x /entrypoint.sh /merlin.sh
 CMD ["/entrypoint.sh"]

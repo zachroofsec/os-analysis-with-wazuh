@@ -29,3 +29,5 @@ sudo sysctl -w vm.max_map_count=262144
 #! Allow iptables to be set within the Victim container
 # (Needed for custom Wazuh Active Response script)
 sudo modprobe ip6table_filter
+
+echo "Installation Finished!"
