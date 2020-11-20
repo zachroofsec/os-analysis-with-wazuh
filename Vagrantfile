@@ -66,6 +66,6 @@ Vagrant.configure("2") do |config|
   # documentation for more information about their specific syntax and use.
   config.vm.provision "shell", inline: <<-SHELL
     sudo sysctl -w vm.max_map_count=262144
-    cd /vagrant
+    cd /home/vagrant
   SHELL
 end

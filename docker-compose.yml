@@ -74,8 +74,7 @@ services:
       - wazuh
       - merlin-server
 #    volumes:
-#      - './victim-container/misc/foothold/foothold.py:/tmp/foothold.py'
-#      - './victim-container/misc/foothold/libprocesshider.c:/tmp/libprocesshider.c'
+#      - './merlin-server-container/foothold:/foothold'
 
   merlin-server:
     image: zachroofsec/os-analysis-with-wazuh-merlin
@@ -83,5 +82,5 @@ services:
     ports:
       - "443:443"
 #    volumes:
-#      - './victim-container/misc/foothold:/foothold'
+#      - './merlin-server-container/foothold:/foothold'
 

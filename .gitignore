@@ -4,6 +4,7 @@
 .DS_Store
 .AppleDouble
 .LSOverride
+*.swp
 
 # Icon must end with two \r
 Icon
@@ -69,3 +70,4 @@ fabric.properties
 
 # Log files (if you are creating logs in debug mode, uncomment this)
 # *.log
+
