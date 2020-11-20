@@ -131,7 +131,7 @@ class MerlinFoothold:
     def cloak_merlin(self):
         logger.info("Starting compilation of libprocesshider\n"
                     f"An artifact from this compilation will be injected into '{self._preload_path}'\n"
-                    f"Code injected into '{self._preload_path}' will run before any program on the system\n",
+                    f"Code injected into '{self._preload_path}' will run before any program on the system\n"
                     "Once this code is injected, Merlin should be invisible to commands that are used to monitor processes (e.g., `netstat`, `ps`, etc.)\n"
                     "By default, Wazuh uses `netstat` to monitor network connections")
         calling_process_name = "gcc"
