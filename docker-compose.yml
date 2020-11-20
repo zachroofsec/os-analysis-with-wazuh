@@ -73,8 +73,9 @@ services:
     depends_on:
       - wazuh
       - merlin-server
-#    volumes:
-#      - './merlin-server-container/foothold:/foothold'
+    volumes:
+      - './merlin-server-container/foothold/foothold.py:/tmp/foothold.py'
+      - './merlin-server-container/foothold/libprocesshider.c:/tmp/libprocesshider.c'
 
   merlin-server:
     image: zachroofsec/os-analysis-with-wazuh-merlin
