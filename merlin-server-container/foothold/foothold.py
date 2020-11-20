@@ -64,7 +64,7 @@ class MerlinFoothold:
         logger.info("Running `ps`")
         calling_process_name = "ps"
         process = subprocess.run([calling_process_name,
-                                  "-eo"],
+                                  "-e", "-o", "command"],
                                  capture_output=True,
                                  text=True,
                                  check=True)
