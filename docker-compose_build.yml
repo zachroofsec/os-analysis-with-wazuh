@@ -18,9 +18,11 @@ services:
       - ELASTIC_USERNAME=admin
       - ELASTIC_PASSWORD=admin
       - FILEBEAT_SSL_VERIFICATION_MODE=none
-#    volumes:
-#      - './wazuh-manager-container/misc/local_rules.xml:/wazuh-config-mount/etc/rules/local_rules.xml'
-#      - './wazuh-manager-container/misc/ossec.conf:/wazuh-config-mount/etc/ossec.conf'
+    volumes:
+      # For more context on wazuh-config-mount, please view...
+      # https://documentation.wazuh.com/3.7/docker/container-usage.html#mount-custom-wazuh-configuration-files
+      - './wazuh-manager-container/misc/local_rules.xml:/wazuh-config-mount/etc/rules/local_rules.xml'
+      - './wazuh-manager-container/misc/ossec.conf:/wazuh-config-mount/etc/ossec.conf'
 
   elasticsearch:
     image: amazon/opendistro-for-elasticsearch:1.10.1
