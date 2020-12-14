@@ -22,7 +22,7 @@
 13. (https://documentation.wazuh.com/4.0/user-manual/reference/ossec-conf/active-response.html#location)
 14. https://github.com/zachroofsec/os-analysis-with-wazuh/blob/master/victim-container/misc/deny-invisible-process/deny-invisible-process.py
 15. https://github.com/zachroofsec/os-analysis-with-wazuh/blob/master/victim-container/misc/quarantine/quarantine.py
-16. zachroofsec.com
+16. https://zachroofsec.com
 
 # Additional Resources Slide
 1. https://wazuh.com/blog/emotet-malware-detection/
