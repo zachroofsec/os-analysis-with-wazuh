@@ -57,6 +57,9 @@ services:
       - SERVER_SSL_ENABLED=true
       - SERVER_SSL_CERTIFICATE=/usr/share/kibana/config/opendistroforelasticsearch.example.org.cert
       - SERVER_SSL_KEY=/usr/share/kibana/config/opendistroforelasticsearch.example.org.key
+    volumes:
+      - './kibana-container/local_env_only.key:/usr/share/kibana/config/opendistroforelasticsearch.example.org.key'
+      - './kibana-container/local_env_only.cert:/usr/share/kibana/config/opendistroforelasticsearch.example.org.cert'
 
     depends_on:
       - elasticsearch
